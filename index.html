@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Controller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .device {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 250px;
+            background: #ddd;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .on { background: green; color: white; }
+        .off { background: red; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Smart Home Controller</h1>
+    <div class="container">
+        <div class="device">
+            <span>Light</span>
+            <button class="off" onclick="toggleDevice(this)">OFF</button>
+        </div>
+        <div class="device">
+            <span>Fan</span>
+            <button class="off" onclick="toggleDevice(this)">OFF</button>
+        </div>
+        <div class="device">
+            <span>AC</span>
+            <button class="off" onclick="toggleDevice(this)">OFF</button>
+        </div>
+    </div>
+    <script>
+        function toggleDevice(button) {
+            if (button.innerText === "OFF") {
+                button.innerText = "ON";
+                button.classList.remove("off");
+                button.classList.add("on");
+            } else {
+                button.innerText = "OFF";
+                button.classList.remove("on");
+                button.classList.add("off");
+            }
+        }
+    </script>
+</body>
+</html>
